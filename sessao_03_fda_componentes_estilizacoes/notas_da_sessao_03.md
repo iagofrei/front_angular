@@ -12,9 +12,9 @@
     ```
     ng g c card
     ```
-    g: generate
-    c: component
-    card: nome do componente
+    - g: generate
+    - c: component
+    - card: nome do componente
 
     Rodei esse comando na pasta raiz do projeto pasta: "projeto-components"
 
@@ -26,6 +26,6 @@
     ```
     ng g m cards
     ```
-    g: generate
-    m: module
-    cards: nome do modulo
+    - g: generate
+    - m: module
+    - cards: nome do modulo
