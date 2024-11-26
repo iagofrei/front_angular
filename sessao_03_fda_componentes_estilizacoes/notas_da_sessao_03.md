@@ -8,6 +8,22 @@
 
 - Apaguei o conteúdo do app.component.html
 
+#### Executar o projeto
+
+- Para executar o projeto abra um terminal na pasta raiz e execute um desses comandos:
+
+    ```
+    ng serve
+    ```
+
+    ou
+
+    ```
+    npm run start
+    ```
+
+#### Criar um componente
+
 - Criei um componente de card através deste comando: 
     ```
     ng g c card
@@ -20,6 +36,8 @@
 
 
 ### Aula 25:
+
+#### Criar um componente
 
 - Criar um novo modulo:
 
