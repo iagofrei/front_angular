@@ -1,0 +1,43 @@
+<body>
+  <div id="header-container">
+    <h2>Converter Json em String | Converter String em Json</h2>
+    <div class="selection-options">
+      <div *ngFor="let option of options">
+        <input
+          type="radio"
+          [value]="option"
+          name="optionsGroup"
+          [(ngModel)]="selectedOption"
+        />
+        {{ option }}
+      </div>
+    </div>
+  </div>
+  <div id="input-container">
+    <div class="input-description">
+      <p>Insira os dados aqui em baixo:</p>
+    </div>
+    <textarea
+      name="input-value"
+      id="input-data"
+      [(ngModel)]="userInput"
+    ></textarea>
+    <button id="erase" (click)="cleanAll()">Limpar</button>
+    <button id="submit" (click)="convertData()">Converter</button>
+  </div>
+  <div id="result-container">
+    <div class="result-description">
+      <p>Dado convertido:</p>
+    </div>
+    <textarea
+      name="result-value"
+      id="result-data"
+      [value]="inputConverted"
+      readonly
+    ></textarea>
+    <button id="copy" (click)="copyToClipBoard()">Copiar</button>
+  </div>
+  <div id="alert">
+    <p id="alert-message"></p>
+  </div>
+</body>
