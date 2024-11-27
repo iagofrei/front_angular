@@ -1,6 +1,8 @@
 
 # Sessão 2 - Instalações necessárias
 
+[Pasta da sessão](./sessao_02_instalacoes_necessarias/)
+
 ## Aula 8
 
 ### Site do node: 
@@ -120,6 +122,8 @@ Instalar baixar a versão e instalar a mais recente
 
 
 # Sessão 3 - Fundamentos do Angulas: Componentes e Estilizações
+
+[Pasta da sessão](./sessao_03_fda_componentes_estilizacoes/)
 
 ## Aula 22 - Conceito de Componentes e Módulos
 
