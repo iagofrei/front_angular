@@ -12,48 +12,71 @@ export class JsonConvertComponent {
   userInput: any = '';
   inputConverted: any = '';
 
+  isHidden: boolean = true;
+
+  alertBackgroundColor: string = 'green';
+  isAlertHidden: string = 'hidden';
+  alertMessage: string = '';
+
+  ngOnInit(): void {
+    this.selectedOption = this.options[0];
+  }
+
   convertData() {
     if (!this.selectedOption) {
-      return alert("Você precisa selecionar uma opção de conversão!");
+      this.myAlert(
+        'warning',
+        'Você precisa selecionar uma opção de conversão!'
+      );
     } else {
       if (this.selectedOption === this.options[0]) {
         try {
-          let result = JSON.stringify(this.userInput);
-          return this.inputConverted = result;
+          this.inputConverted = this.jsonToString(this.userInput);
+          this.isHidden = false;
         } catch (error) {
           console.error(error);
-          return alert("Não foi possível fazer a conversão do dado!");
+          this.isHidden = true;
+          this.myAlert('error', 'Não foi possível fazer a conversão do dado!');
         }
       } else {
         try {
-          let result = JSON.parse(this.userInput);
-          return this.inputConverted = result;
+          this.inputConverted = this.stringToJson(this.userInput);
+          this.isHidden = false;
         } catch (error) {
           console.error(error);
-          return alert("Não foi possível fazer a conversão do dado!");
+          this.isHidden = true;
+          this.myAlert('error', 'Não foi possível fazer a conversão do dado!');
         }
       }
     }
   }
 
+  jsonToString(data: any): string {
+    return JSON.stringify(data);
+  }
+
+  stringToJson(data: any): object {
+    return JSON.parse(data);
+  }
+
   cleanAll() {
-    this.selectedOption = ''
-    this.userInput = ''
-    this.inputConverted = ''
+    // this.selectedOption = '';
+    this.userInput = '';
+    this.inputConverted = '';
+    this.isHidden = true;
   }
 
   copyToClipBoard() {
-  
     navigator.clipboard
       .writeText(this.inputConverted)
       .then(() => {
-        alert("Valor copiado para a área de transferência!");
+        this.myAlert('success', 'Valor copiado para a área de transferência!');
       })
       .catch((err) => {
-        console.error("Erro ao copiar texto: ", err);
-        alert("Erro ao copiar texto!");
+        console.error('Erro ao copiar texto: ', err);
+        this.myAlert('error', 'Erro ao copiar texto!');
       });
-  
+
     //   if (!resultExist) {
     //     return myAlert("warning", "Você precisa converter algo antes para copiar");
     //   } else {
@@ -69,27 +92,23 @@ export class JsonConvertComponent {
     //   }
   }
 
-  // myAlert(type, alertMessage) {
-  //   const alertElement = document.getElementById("alert");
-  //   const alertElementMessage = document.getElementById("alert-message");
-  
-  //   if (type === "error") {
-  //     alertElement.style.backgroundColor = "red";
-  //   } else {
-  //     if (type === "warning") {
-  //       alertElement.style.backgroundColor = "orange";
-  //     } else {
-  //       alertElement.style.backgroundColor = "green";
-  //     }
-  //   }
-  
-  //   alertElementMessage.innerText = alertMessage;
-  //   alertElement.style.visibility = "visible";
-  
-  //   setTimeout(function () {
-  //     alertElementMessage.innerText = "";
-  //     alertElement.style.visibility = "hidden";
-  //   }, 3000);
-  // }
-  
+  myAlert(type: 'success' | 'error' | 'warning', alertMessage: string) {
+    if (type === 'error') {
+      this.alertBackgroundColor = 'red';
+    } else {
+      if (type === 'warning') {
+        this.alertBackgroundColor = 'orange';
+      } else {
+        this.alertBackgroundColor = 'green';
+      }
+    }
+
+    this.alertMessage = alertMessage;
+    this.isAlertHidden = 'visible';
+
+    setTimeout(() => {
+      this.alertMessage = '';
+      this.isAlertHidden = 'hidden';
+    }, 3000);
+  }
 }
