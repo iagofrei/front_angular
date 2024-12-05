@@ -205,3 +205,35 @@ Instalar baixar a versão e instalar a mais recente
 ## Aula 49 - O que é "Property Binding”
 
 ## Aula 50 - O que é "Event Binding”
+
+- Quando eu uso ( ) eu estou recebendo um valor ou evento, ex: (click)="sendAlgo" logo estou recebendo um evento de click
+
+- Quando eu uso [ ] eu estou enviando um valor ou evento, ex: [disabled]="isDisabled" eu estou enviando um parâmetro ou função de desabilitar
+
+- [Event binding docs](https://v17.angular.io/guide/event-binding-concepts)
+
+## Aula 51 - O que é "Attribute Binding”
+
+- [Attribute binding docs](https://v17.angular.io/guide/attribute-binding)
+
+## Aula 52 - CSS Style Binding
+
+- [Style Binding docs](https://v17.angular.io/guide/class-binding#binding-to-a-single-style)
+
+- [HTML da aula](./sessao_04_fda_binding_diretivas_temp_decorators/05_CSS_Style_Binding/src/app/app.component.html)
+
+- [Typescript da aula](./sessao_04_fda_binding_diretivas_temp_decorators/05_CSS_Style_Binding/src/app/app.component.ts)
+
+## Aula 53 - CSS Class Binding
+
+- [Class Binding docs](https://v17.angular.io/guide/class-binding#binding-to-a-single-css-class)
+
+- [HTML da aula](./sessao_04_fda_binding_diretivas_temp_decorators/06_CSS_Class_Binding/src/app/app.component.html)
+
+- [SCSS da aula](./sessao_04_fda_binding_diretivas_temp_decorators/06_CSS_Class_Binding/src/app/app.component.scss)
+
+- [Typescript da aula](./sessao_04_fda_binding_diretivas_temp_decorators/06_CSS_Class_Binding/src/app/app.component.ts)
+
+## Aula 55 - Como funciona o decorator "@Input"
+
+- [Pasta app da aula](./sessao_04_fda_binding_diretivas_temp_decorators/07_Como_Funciona_o_Decorator_Input/src/app/)

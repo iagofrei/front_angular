@@ -25,7 +25,7 @@
     <button id="erase" (click)="cleanAll()">Limpar</button>
     <button id="submit" (click)="convertData()">Converter</button>
   </div>
-  <div id="result-container">
+  <div id="result-container" [hidden]="isHidden">
     <div class="result-description">
       <p>Dado convertido:</p>
     </div>
@@ -37,7 +37,8 @@
     ></textarea>
     <button id="copy" (click)="copyToClipBoard()">Copiar</button>
   </div>
-  <div id="alert">
-    <p id="alert-message"></p>
+  <!-- <div id="alert" [style.backgroundColor]="alertBackgroundColor" [style.visibility]="isAlertHidden"> -->
+  <div id="alert" [ngStyle]="{ 'background-color' : alertBackgroundColor , 'visibility': isAlertHidden }">
+    <p id="alert-message">{{alertMessage}}</p>
   </div>
 </body>
