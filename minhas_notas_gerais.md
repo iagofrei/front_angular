@@ -241,3 +241,13 @@ Instalar baixar a versão e instalar a mais recente
 ## Aula 55 - Como funciona o decorator "@Output"
 
 - [Pasta app da aula](./sessao_04_fda_binding_diretivas_temp_decorators/08_Como_Funciona_o_Decorator_Output/src/app/)
+
+## Aula 66 - Diretiva Estrutural "NgIf"
+
+- Como usar
+
+    ```html
+    <div style="background-color: green" *ngIf="true/false">Sou uma div!</div>
+    ```
+
+- Quando o ngIf retorna um valor "false" o angular remove completamente o elemento, diferente das propriedades do css "display: none" ou "visibility: hidden"
