@@ -1,20 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { IFilterOption } from '../../interfaces/filter-options.interface';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.scss'
+  styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
+  filterOptions: IFilterOption = {
+    name: undefined,
+    startDate: undefined,
+    endDate: undefined,
+    status: undefined,
+  };
 
-  foods = [
+  statusList = [
     {
-      value: "Teste",
-      viewValue: "Teste"
+      description: 'Ativo',
+      value: true,
     },
     {
-      value: "Teste1",
-      viewValue: "Teste1"
-    }
-  ]
+      description: 'Inativo',
+      value: false,
+    },
+  ];
+
+  @Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOption>();
+
+  onFilter() {
+    this.onFilterEmitt.emit(this.filterOptions);
+  }
 }
