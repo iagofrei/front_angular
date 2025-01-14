@@ -251,3 +251,31 @@ Instalar baixar a versão e instalar a mais recente
     ```
 
 - Quando o ngIf retorna um valor "false" o angular remove completamente o elemento, diferente das propriedades do css "display: none" ou "visibility: hidden"
+
+## Aula 67 - Diretiva Estrutural "NgFor"
+
+- Como usar:
+
+    ```html
+    <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="filterOptions.status">
+        <mat-option *ngFor="let status of statusList" [value]="status.value">{{status.description}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+    ```
+
+    - Valo do statusList no typescript:
+
+        ```ts
+        statusList = [
+            {
+            description: 'Ativo',
+            value: true,
+            },
+            {
+            description: 'Inativo',
+            value: false,
+            },
+        ];
+        ```
