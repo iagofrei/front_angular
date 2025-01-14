@@ -237,10 +237,12 @@ Instalar baixar a versão e instalar a mais recente
 ## Aula 55 - Como funciona o decorator "@Input"
 
 - [Pasta app da aula](./sessao_04_fda_binding_diretivas_temp_decorators/07_Como_Funciona_o_Decorator_Input/src/app/)
+- [Doc Angular Input](https://angular.dev/api/core/Input)
 
 ## Aula 55 - Como funciona o decorator "@Output"
 
 - [Pasta app da aula](./sessao_04_fda_binding_diretivas_temp_decorators/08_Como_Funciona_o_Decorator_Output/src/app/)
+- [Doc Angular Output](https://angular.dev/api/core/Output)
 
 ## Aula 66 - Diretiva Estrutural "NgIf"
 
